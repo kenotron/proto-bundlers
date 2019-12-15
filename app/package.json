@@ -1,0 +1,42 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "prebuild": "relative-deps",
+    "build": "rollup -c",
+    "prepare": "relative-deps",
+    "prestart": "relative-deps",
+    "start": "webpack-dev-server -w",
+    "pretest": "relative-deps",
+    "webpack": "webpack"
+  },
+  "dependencies": {
+    "foolib": "*",
+    "react": "16.8.0",
+    "react-dom": "16.8.0",
+    "office-ui-fabric-react": "^7.73.0",
+    "tslib": "^1.10.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.6",
+    "@babel/preset-react": "^7.7.4",
+    "@rollup/plugin-html": "^0.1.0",
+    "babel-loader": "^8.0.6",
+    "html-webpack-plugin": "4.0.0-beta.5",
+    "relative-deps": "^0.2.0",
+    "rollup": "^1.27.13",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "webpack": "next",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  },
+  "relativeDependencies": {
+    "foolib": "../foolib"
+  }
+}
