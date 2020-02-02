@@ -1,5 +1,5 @@
 const webpack = require("webpack");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   devtool: false,
@@ -7,6 +7,17 @@ module.exports = {
   entry: "./src/index",
   optimization: {
     minimize: false
+  },
+  experiments: {
+    outputModule: true,
+    mjs: true
+  },
+  output: {
+    module: true,
+    libraryTarget: "module",
+    jsonpScriptType: "module",
+    library: "App",
+    ecmaVersion: 2015
   },
   module: {
     rules: [
@@ -29,9 +40,19 @@ module.exports = {
         }
       }
     }),
-    new HtmlWebpackPlugin({
-      template: "./index.ejs",
-      appMountId: "root"
-    })
-  ]
+    new CopyPlugin([{ from: "index.html", to: "index.html" }])
+  ],
+  cache: {
+    // 1. Set cache type to filesystem
+    type: "filesystem",
+
+    buildDependencies: {
+      // 2. Add your config as buildDependency to get cache invalidation on config change
+      config: [__filename]
+
+      // 3. If you have other things the build depends on you can add them here
+      // Note that webpack, loaders and all modules referenced from your config are automatically added
+    },
+    managedPaths: []
+  }
 };

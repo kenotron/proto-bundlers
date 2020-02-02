@@ -1,0 +1,20 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "dev": "babel -c -o lib -w"
+  },
+  "dependencies": {
+    "react": "16.8.0",
+    "react-dom": "16.8.0",
+    "office-ui-fabric-react": "7.73.0",
+    "tslib": "^1.10.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/cli": "^7.8.3",
+    "snowpack": "^1.1.2"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "office-ui-fabric-react": "./office-ui-fabric-react.js",
+    "tslib": "./tslib.js"
+  }
+}
